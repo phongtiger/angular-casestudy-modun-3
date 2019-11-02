@@ -8,7 +8,7 @@ import {IBlog} from './i-blog';
 })
 export class ContentService {
 
-  private readonly API_URL = 'http://localhost:8080/rest/blog';
+  private readonly API_URL = 'http://localhost:8080/rest/blogs';
   constructor(private http: HttpClient) { }
 
   getById(id: number): Observable<IBlog> {
