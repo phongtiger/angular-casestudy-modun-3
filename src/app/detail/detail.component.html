@@ -1,1 +1,43 @@
-<p>detail works!</p>
+<div class="container">
+  <a href="/" class="btn btn-primary" role="button">Home</a>
+  <div class="media" *ngIf="info; else nothing">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="media">
+          <img class="media-object" src="{{info.image}}" alt="...">
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="media-body">
+      <h3 class="media-heading">{{info.tittle}}</h3>
+      <p>{{info.content}}</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="video">
+          <iframe width="560" height="315" [src]="getSrc()" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>
+<ng-template #nothing>
+  <p>Nothing to show</p>
+</ng-template>
+
+<!--<div class="container">-->
+<!--  <div *ngIf="info; else nothing">-->
+<!--    <h4>-->
+<!--      {{info.tittle}}-->
+<!--    </h4>-->
+<!--    <p>-->
+<!--      {{info.content}}-->
+<!--    </p>-->
+<!--  </div>-->
+
+
+

@@ -4,4 +4,5 @@ export interface IBlog {
   content: string;
   image: string;
   category: string;
+  linkYoutube: string;
 }

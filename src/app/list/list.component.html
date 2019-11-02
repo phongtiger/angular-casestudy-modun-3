@@ -6,7 +6,7 @@
       </a>
     </div>
     <div class="media-body">
-      <h3 class="media-heading">{{item.tittle}}</h3>
+      <h3 class="media-heading"><a [routerLink]="['/blog', item.id]">{{item.tittle}}</a></h3>
       <p>{{item.content}}</p>
     </div>
     <div class="row">
