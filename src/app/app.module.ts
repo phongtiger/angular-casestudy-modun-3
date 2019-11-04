@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     ListComponent,
     DetailComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

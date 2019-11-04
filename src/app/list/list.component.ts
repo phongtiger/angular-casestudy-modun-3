@@ -27,6 +27,12 @@ export class ListComponent implements OnInit {
     });
   }
 
+  edit(i: number) {
+    this.contentService.getById(i).subscribe(data => {
+      this.info = data;
+    });
+  }
+
   deleteContent(i: number) {
     this.contentService.deleteContent(i).subscribe( () => {
       this.output = this.output.filter(t => t.id !== i);

@@ -17,10 +17,14 @@ export class ContentService {
   getContents(): Observable<IBlog[]> {
     return this.http.get<IBlog[]>(`${this.API_URL}`);
   }
-
+  // deleteContent(id: number): Observable<any> {
+  //     return this.http.delete(`${this.API_URL}/delete/${id}`);
+  // }
   deleteContent(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
-
+    const r = confirm('Ban chac chan xoa?\n Chon OK hoac Cancel!');
+    if (r) {
+      return this.http.delete(`${this.API_URL}/delete/${id}`);
+    }
   }
 
   createPost(post: Partial<IBlog>): Observable<IBlog> {
@@ -31,9 +35,10 @@ export class ContentService {
     return this.http.delete(`${this.API_URL}/${id}`);
   }
 
-  updatePost(post: IBlog): Observable<IBlog> {
-    console.log('ok');
-    return this.http.put<IBlog>(`${this.API_URL}/${post.id}`, post);
-
+  updatePost(post: Partial<IBlog>): Observable<IBlog> {
+    const r = confirm('Ban chac chan muon cap nhat?\n Chon OK hoac Cancel!');
+    if (r) {
+      return this.http.put<IBlog>(`${this.API_URL}/update/${post.id}`, post);
+    }
   }
 }

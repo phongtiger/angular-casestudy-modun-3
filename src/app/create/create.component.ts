@@ -11,6 +11,7 @@ import {IBlog} from '../i-blog';
 export class CreateComponent implements OnInit {
   postList: IBlog[] = [];
   postForm: FormGroup;
+  message: string;
   constructor(
     private postService: ContentService,
     private fb: FormBuilder
@@ -27,6 +28,7 @@ export class CreateComponent implements OnInit {
   onSubmit() {
     if (this.postForm.valid) {
       const {value} = this.postForm;
+      this.message = 'Tao thanh cong';
       this.postService.createPost(value)
         .subscribe(next => {
           this.postList.unshift(next);

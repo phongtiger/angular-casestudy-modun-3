@@ -1,16 +1,17 @@
 <div class="container">
-  <h2 class="text-center">Create</h2>
+  <h2 class="text-center">Edit</h2>
   <div class="alert alert-success" role="alert" *ngIf="message">
     <h4 class="alert-heading">{{message}}</h4>
   </div>
-  <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="col-md-12 offset-md-8">
+  <form [formGroup]="data" (ngSubmit)="editMember()" class="col-md-12 offset-md-8">
+    <input type="hidden" formControlName="id">
     <div class="form-group row">
       <label class="col-md-10">
         Title
         <input type="text" class="form-control" formControlName="tittle">
       </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="postForm.get('tittle').invalid && postForm.get('tittle').touched">
+    <div class="alert alert-danger" role="alert" *ngIf="data.get('tittle').invalid && data.get('tittle').touched">
       Invalid title!
     </div>
     <div class="form-group row">
@@ -20,7 +21,7 @@
       </label>
     </div>
 
-    <div class="alert alert-danger" role="alert" *ngIf="postForm.get('content').invalid && postForm.get('content').touched">
+    <div class="alert alert-danger" role="alert" *ngIf="data.get('content').invalid && data.get('content').touched">
       Invalid content!
     </div>
     <div class="form-group row">
@@ -29,7 +30,7 @@
         <input type="text" class="form-control" formControlName="image">
       </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="postForm.get('image').invalid && postForm.get('image').touched">
+    <div class="alert alert-danger" role="alert" *ngIf="data.get('image').invalid && data.get('image').touched">
       Invalid title!
     </div>
     <div class="form-group row">
@@ -38,7 +39,7 @@
         <input type="text" class="form-control" formControlName="linkYoutube">
       </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="postForm.get('linkYoutube').invalid && postForm.get('linkYoutube').touched">
+    <div class="alert alert-danger" role="alert" *ngIf="data.get('linkYoutube').invalid && data.get('linkYoutube').touched">
       Invalid Youtube!
     </div>
     <div class="form-group">
@@ -46,3 +47,4 @@
     </div>
   </form>
 </div>
+
